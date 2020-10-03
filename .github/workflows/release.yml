@@ -19,6 +19,8 @@ jobs:
         git submodule init
         git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update
         git lfs install --force
+    - name: Install CMake 3.17.2
+      run: choco install cmake --version=3.17.2
     - name: Build libraries
       run: powershell .\build_all.bat
     - name: Upload artifacts

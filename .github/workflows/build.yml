@@ -23,6 +23,8 @@ jobs:
           run: |
             mkdir dist
             mkdir dist\lib
+        - name: Install CMake 3.17.2
+          run: choco install cmake --version=3.17.2
         - name: Build zlib
           run: powershell .\build_zlib.bat v1.2.9 dist\lib
         - name: Build xz
